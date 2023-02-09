@@ -5,6 +5,7 @@ const app = express();
 index.set('view engine' , 'ejs'),
 
 /* 
+1
 app.post();
 app.put();
 app.delete(); */
