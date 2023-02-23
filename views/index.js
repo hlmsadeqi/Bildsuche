@@ -15,8 +15,40 @@ function handleEdit(id,element) {
     names.readOnly = false ;
 }
 
+async function  test() {
+    let value = document.getElementById("search-value").value;
+    var list =[];
+    var cols = document.getElementsByClassName('col')
+    if(value==""){
+        for (var elements of cols) {
+          
+            elements.style.display=""
+            
+        }
+    }else{
+        const response = await fetch('/api/find/'+value);
+        const myJson = await response.json(); //extract JSON from the http response
+        console.log(myJson);
+        for (var elements of cols) {
+            elements.style.display="none"
+        }
+        myJson.data.forEach(element => {
+            list.push("bild-"+element.id);
+        })
+        list.forEach(element =>{
+            for (const iterator of document.getElementsByClassName(element)) {
+                iterator.style.display=""
+            }
+        });
+        
+    }
+    console.log(cols);
+}
 
-
+/*
+function hasClass(element, className) {
+    return (' ' + element.className + ' ').indexOf(' ' + className+ ' ') > -1;
+}
 function handleSave(id,element) {
     console.log(element);
     element.disabled = true ;
@@ -30,4 +62,4 @@ function handleSave(id,element) {
     
     let name = document.getElementById("name-"+id);
     name.disabled = true ;
-}
+} */
