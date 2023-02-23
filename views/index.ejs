@@ -114,6 +114,11 @@
                                 <button type="button" id="edit-<%= bilder.id %>" onclick="handleEdit(<%= bilder.id %>,this)" class="btn btn-sm btn-outline-secondary">Edit</button>
                             </div>
                         </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <p><%= bilder.uploaded %></p>
+                            </div>
+                        </div>
                     </form>
                     </div>
                 
@@ -150,7 +155,7 @@
                                     <input type="number" name="id" value="<%= bilder.id %>" hidden>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                  
+                                    <p><%= bilder.uploaded %></p>
                                 </div>
                             </form>
                             </div>
@@ -191,7 +196,7 @@
                                     <input type="number" name="id" value="<%= bilder.id %>" hidden>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                
+                                    <p><%= bilder.uploaded %></p>
                                 </div>
                             </form>
                             </div>

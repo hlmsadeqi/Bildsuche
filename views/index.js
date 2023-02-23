@@ -1,6 +1,5 @@
 function handleEdit(id,element) {
     console.log(element);
-    alert("id"+id);
 
     element.disabled = true ;
     document.getElementById("save-"+id).disabled = false;

@@ -150,7 +150,8 @@ app.post('/api/upload/picture*', (req, res) => {
             name: fields.pictureName,
             active: true ,
             path : bilder+(files.file.originalFilename).toString() ,
-            description: fields.description
+            description: fields.description,
+            uploaded: new Date().toLocaleString()
         };
         
         data["results"].push(newPicture)
